@@ -1,0 +1,13 @@
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.lock.json
+# Visual Studio Code
+.vscode/
+# Rider
+.idea/
+*.sln.DotSettings.user
+
