@@ -1,0 +1,178 @@
+/* Features Section */
+.features-section {
+  position: relative;
+  z-index: 10;
+  padding: 6rem 2rem;
+  background: transparent;
+}
+
+.features-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.features-title {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--brand-purple);
+  transition: all 0.4s ease-in-out;
+}
+
+html:not(.dark) .features-title {
+  color: var(--brand-purple);
+}
+
+.features-subtitle {
+  text-align: center;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 4rem;
+  transition: color 0.4s ease-in-out;
+}
+
+html:not(.dark) .features-subtitle {
+  color: rgba(26, 26, 26, 0.8);
+}
+
+/* Features Grid - Stack-wise Layout */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Feature Block - Glassmorphic Card */
+.feature-block {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: block;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner highlight */
+.feature-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+/* Premium hover effect */
+.feature-block:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 12px 48px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(124, 58, 237, 0.15);
+}
+
+/* Light mode styles */
+html:not(.dark) .feature-block {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+html:not(.dark) .feature-block:hover {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 12px 48px rgba(0, 0, 0, 0.15),
+    0 0 20px rgba(124, 58, 237, 0.1);
+}
+
+/* Typography */
+.feature-block-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  color: white;
+  transition: color 0.4s ease-in-out;
+  line-height: 1.3;
+}
+
+html:not(.dark) .feature-block-title {
+  color: #1a1a1a;
+}
+
+.feature-block-description {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  transition: color 0.4s ease-in-out;
+}
+
+html:not(.dark) .feature-block-description {
+  color: rgba(26, 26, 26, 0.75);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .features-grid {
+    max-width: 1000px;
+    gap: 1.75rem;
+  }
+
+  .feature-block {
+    padding: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    max-width: 1100px;
+    gap: 2rem;
+  }
+
+  .feature-block {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .features-section {
+    padding: 4rem 1rem;
+  }
+
+  .features-grid {
+    gap: 1.25rem;
+  }
+
+  .feature-block {
+    padding: 1.5rem;
+  }
+
+  .feature-block-title {
+    font-size: 1.25rem;
+  }
+
+  .feature-block-description {
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,252 @@
+/* Employee Portal - Matches Client Portal Design System */
+.employee-portal-container {
+  min-height: 100vh;
+  position: relative;
+  background: #0a0a0a;
+  color: white;
+}
+
+html:not(.dark) .employee-portal-container {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* Top Bar - Minimal header like Client Portal */
+.employee-portal-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+html:not(.dark) .employee-portal-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.employee-portal-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Main Content Wrapper */
+.employee-portal-content-wrapper {
+  margin-top: 70px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Loading State */
+.employee-portal-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  font-size: 1.5rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #B30022;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+html:not(.dark) .loading-spinner {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-top-color: #B30022;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error State - Uses Client Portal alert style */
+.employee-portal-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  padding: 2rem;
+}
+
+.error-card {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  border-left: 4px solid;
+  border-image: linear-gradient(135deg, #B30022 0%, #3D007A 100%) 1;
+}
+
+html:not(.dark) .error-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.error-card h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #B30022 0%, #3D007A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1rem 0;
+}
+
+.error-card .error-message {
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #ef4444;
+}
+
+html:not(.dark) .error-card .error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #dc2626;
+}
+
+/* Subtle Progress Indicator - Client Portal Style */
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html:not(.dark) .progress-indicator {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease;
+}
+
+html:not(.dark) .progress-step {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.progress-step.active {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+html:not(.dark) .progress-step.active {
+  color: #1a1a1a;
+}
+
+.progress-step-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+html:not(.dark) .progress-step-number {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.progress-step.active .progress-step-number {
+  background: linear-gradient(135deg, rgba(179, 0, 34, 0.3) 0%, rgba(61, 0, 122, 0.3) 100%);
+  color: white;
+  border: 1px solid rgba(179, 0, 34, 0.5);
+}
+
+html:not(.dark) .progress-step.active .progress-step-number {
+  background: linear-gradient(135deg, rgba(179, 0, 34, 0.15) 0%, rgba(61, 0, 122, 0.15) 100%);
+  color: #1a1a1a;
+  border-color: rgba(179, 0, 34, 0.3);
+}
+
+.progress-step.completed .progress-step-number {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.progress-step.completed {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+html:not(.dark) .progress-step.completed {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.progress-separator {
+  width: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 0.25rem;
+}
+
+html:not(.dark) .progress-separator {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Step Content - Uses portal-card style */
+.employee-step-content {
+  /* Styles handled by shared portal-card class */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .employee-portal-content-wrapper {
+    padding: 1rem;
+  }
+  
+  .progress-indicator {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  
+  .progress-step {
+    font-size: 0.75rem;
+  }
+  
+  .progress-step-number {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  
+  .progress-separator {
+    display: none;
+  }
+}

@@ -16,6 +16,8 @@ public class Client : BaseEntity
 {
     public string Name { get; set; } = string.Empty;
     public string? DisplayName { get; set; }
+    public string Email { get; set; } = string.Empty; // Company email
+    public string? Phone { get; set; } // Company phone
     public string? Industry { get; set; }
     public string? Country { get; set; }
     

@@ -1,0 +1,201 @@
+/* Auth Forms Shared Styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0.25rem;
+}
+
+html.dark .form-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  background: white;
+  color: rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html.dark .form-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Login page inputs focus (RED) */
+.login-page .form-input:focus,
+.login-page .form-input:focus {
+  border-color: #BD0A2E;
+  box-shadow: 0 0 0 3px rgba(189, 10, 46, 0.1);
+}
+
+html.dark .login-page .form-input:focus {
+  border-color: #BD0A2E;
+  box-shadow: 0 0 0 3px rgba(189, 10, 46, 0.2);
+}
+
+/* Register page inputs focus (PURPLE) */
+.register-page .form-input:focus {
+  border-color: #4B0082;
+  box-shadow: 0 0 0 3px rgba(75, 0, 130, 0.1);
+}
+
+html.dark .register-page .form-input:focus {
+  border-color: #4B0082;
+  box-shadow: 0 0 0 3px rgba(75, 0, 130, 0.2);
+}
+
+/* Default focus (fallback) */
+.form-input:focus {
+  border-color: #BD0A2E;
+  box-shadow: 0 0 0 3px rgba(189, 10, 46, 0.1);
+}
+
+html.dark .form-input:focus {
+  border-color: #4B0082;
+  box-shadow: 0 0 0 3px rgba(75, 0, 130, 0.2);
+}
+
+.form-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+html.dark .form-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-options {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.5rem;
+}
+
+/* Login page forgot password link (RED) */
+.login-page .forgot-password-link {
+  font-size: 0.875rem;
+  color: #BD0A2E;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+html.dark .login-page .forgot-password-link {
+  color: #E63950;
+}
+
+.login-page .forgot-password-link:hover {
+  color: #E63950;
+  text-decoration: underline;
+}
+
+html.dark .login-page .forgot-password-link:hover {
+  color: #FF4D6D;
+}
+
+/* Default forgot password link (RED for login) */
+.forgot-password-link {
+  font-size: 0.875rem;
+  color: #BD0A2E;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+html.dark .forgot-password-link {
+  color: #E63950;
+}
+
+.forgot-password-link:hover {
+  color: #E63950;
+  text-decoration: underline;
+}
+
+html.dark .forgot-password-link:hover {
+  color: #FF4D6D;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+/* Login button - RED */
+.login-submit-btn,
+.auth-submit-btn[data-variant="red"] {
+  background: #BD0A2E;
+  box-shadow: 0 4px 12px rgba(189, 10, 46, 0.3);
+}
+
+.login-submit-btn:hover,
+.auth-submit-btn[data-variant="red"]:hover {
+  background: #E63950;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(189, 10, 46, 0.4);
+}
+
+/* Register button - PURPLE */
+.register-submit-btn,
+.auth-submit-btn[data-variant="purple"] {
+  background: #4B0082;
+  box-shadow: 0 4px 12px rgba(75, 0, 130, 0.3);
+}
+
+.register-submit-btn:hover,
+.auth-submit-btn[data-variant="purple"]:hover {
+  background: #6A1B9A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(75, 0, 130, 0.4);
+}
+
+.login-submit-btn:active,
+.register-submit-btn:active,
+.auth-submit-btn:active {
+  transform: translateY(0);
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .form-input {
+    padding: 0.875rem 1rem;
+    font-size: 0.9375rem;
+  }
+
+  .auth-submit-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+

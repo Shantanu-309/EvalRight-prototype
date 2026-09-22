@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5274:5274"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=host.docker.internal;Database=evalright;Username=postgres;Password=postgres
+    depends_on:
+      - postgres
+    networks:
+      - evalright-network
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: evalright
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - evalright-network
+
+networks:
+  evalright-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

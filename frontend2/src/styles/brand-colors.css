@@ -1,0 +1,44 @@
+/* EvalRight Brand Colors - EXACT from Logo */
+:root {
+  /* Deep red from "E" in logo monogram - EXACT */
+  --brand-red: #BD0A2E;
+  --brand-red-light: #E63950;
+  --brand-red-lighter: #FF4D6D;
+  
+  /* Dark purple from "R" in logo monogram - EXACT */
+  --brand-purple: #4B0082;
+  --brand-purple-deep: #3D0066;
+  --brand-purple-light: #6A1B9A;
+  --brand-purple-lighter: #8E24AA;
+  
+  /* Logo text red ("EVALRIGHT") - EXACT */
+  --brand-text-red: #BD0A2E;
+  
+  /* Subtitle color ("Screen before Hire") - using brand purple */
+  --brand-text-blue: #4B0082;
+  
+  /* Brand gradient for buttons - EXACT brand colors only */
+  --brand-gradient-from: #BD0A2E;
+  --brand-gradient-to: #4B0082;
+  
+  /* Brand gradient string for direct use */
+  --brand-gradient: linear-gradient(to right, #BD0A2E, #4B0082);
+  --brand-gradient-vertical: linear-gradient(to bottom, #BD0A2E, #4B0082);
+}
+
+/* Brand gradient utility */
+.brand-gradient {
+  background: linear-gradient(to right, var(--brand-red), var(--brand-purple));
+}
+
+.brand-gradient-text {
+  background: linear-gradient(to right, var(--brand-red), var(--brand-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-gradient-vertical {
+  background: linear-gradient(to bottom, var(--brand-red), var(--brand-purple));
+}
+

@@ -26,6 +26,7 @@ public enum CandidateStatus
 {
     Invited,
     ProfilePending,
+    Submitted,
     AwaitingDocuments,
     InVerification,
     Clear,

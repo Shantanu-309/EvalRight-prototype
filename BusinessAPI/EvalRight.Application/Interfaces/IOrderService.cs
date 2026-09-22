@@ -9,5 +9,6 @@ public interface IOrderService
     Task<OrderDetailDto> CreateOrderAsync(CreateOrderRequest request, long initiatedByAccountId);
     Task<OrderDetailDto?> GetOrderByIdAsync(long id);
     Task<List<OrderDto>> GetOrdersByClientIdAsync(long clientId);
+    Task<ManualOrderResponse> CreateManualOrderAsync(ManualOrderRequest request, long clientId, long initiatedByAccountId);
 }
 

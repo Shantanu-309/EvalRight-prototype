@@ -47,12 +47,12 @@ public class AuthController : ControllerBase
     }
     
     [HttpPost("register/client")]
-    public async Task<IActionResult> RegisterClient([FromBody] RegisterRequest request)
+    public async Task<IActionResult> RegisterClient([FromBody] ClientRegistrationRequest request)
     {
         try
         {
-            var account = await _authService.RegisterAsync(request, "client_admin");
-            return Ok(new { message = "Client registered successfully", accountId = account.Id });
+            var response = await _authService.RegisterClientAsync(request);
+            return Ok(response);
         }
         catch (System.Exception ex)
         {

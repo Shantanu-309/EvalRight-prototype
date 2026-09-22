@@ -1,0 +1,319 @@
+/* Process Steps Section */
+.process-steps-section {
+  position: relative;
+  z-index: 10;
+  padding: 6rem 2rem;
+  background: transparent;
+}
+
+.process-steps-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.process-steps-title {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--brand-red);
+  transition: all 0.4s ease-in-out;
+}
+
+html:not(.dark) .process-steps-title {
+  color: var(--brand-red);
+}
+
+.process-steps-subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto 4rem;
+  max-width: 900px;
+  transition: color 0.4s ease-in-out;
+}
+
+html:not(.dark) .process-steps-subtitle {
+  color: rgba(26, 26, 26, 0.8);
+}
+
+/* Timeline Container */
+.process-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+/* Process Step */
+.process-step {
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.process-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Step Content */
+.step-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step-left .step-content {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.step-right .step-content {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* Step Number Wrapper */
+.step-number-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #8A2BE2 0%, #4B0082 100%);
+  border-radius: 0.75rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 
+    0 8px 32px rgba(138, 43, 226, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+html:not(.dark) .step-number {
+  background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-purple) 100%);
+  box-shadow: 
+    0 8px 32px rgba(168, 85, 247, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.process-step:hover .step-number {
+  transform: scale(1.1);
+  box-shadow: 
+    0 12px 48px rgba(138, 43, 226, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Step Connector */
+.step-connector {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3rem;
+  z-index: 1;
+}
+
+.connector-line {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #8A2BE2 0%, rgba(138, 43, 226, 0.4) 100%);
+  position: relative;
+  border-radius: 2px;
+}
+
+.connector-line::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #8A2BE2;
+}
+
+html:not(.dark) .connector-line {
+  background: linear-gradient(to bottom, var(--brand-purple) 0%, rgba(124, 58, 237, 0.3) 100%);
+}
+
+html:not(.dark) .connector-line::after {
+  border-top-color: var(--brand-purple);
+}
+
+/* Step Text */
+.step-text {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+html:not(.dark) .step-text {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.process-step:hover .step-text {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 12px 48px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+html:not(.dark) .process-step:hover .step-text {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: 
+    0 12px 48px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1rem 0;
+  transition: color 0.4s ease-in-out;
+}
+
+html:not(.dark) .step-title {
+  color: #1a1a1a;
+}
+
+.step-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
+  transition: color 0.4s ease-in-out;
+}
+
+html:not(.dark) .step-description {
+  color: rgba(26, 26, 26, 0.8);
+}
+
+.step-description p {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .process-timeline {
+    gap: 2.5rem;
+  }
+
+  .step-content {
+    gap: 1.5rem;
+  }
+
+  .step-number {
+    width: 70px;
+    height: 70px;
+    font-size: 1.75rem;
+  }
+
+  .step-text {
+    padding: 1.75rem;
+  }
+
+  .step-title {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-steps-section {
+    padding: 4rem 1rem;
+  }
+
+  .process-steps-subtitle {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .process-timeline {
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  .step-left .step-content,
+  .step-right .step-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .step-number-wrapper {
+    width: 100%;
+    align-items: center;
+  }
+
+  .step-connector {
+    left: 50%;
+  }
+
+  .step-text {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .step-title {
+    font-size: 1.25rem;
+  }
+
+  .step-description p {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .step-text {
+    padding: 1.25rem;
+  }
+
+  .step-title {
+    font-size: 1.125rem;
+  }
+
+  .step-description p {
+    font-size: 0.875rem;
+  }
+}
+

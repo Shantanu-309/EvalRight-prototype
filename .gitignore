@@ -11,3 +11,25 @@ obj/
 .idea/
 *.sln.DotSettings.user
 
+# Secrets / local overrides (do not commit)
+**/appsettings.Local.json
+**/appsettings.*.Local.json
+.env
+.env.*
+!.env.example
+
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.cache/
+frontend/build/
+frontend/*.local
+frontend2/node_modules/
+frontend2/dist/
+frontend2/.cache/
+frontend2/build/
+frontend2/*.local
+**/node_modules/
+**/dist/
+*.tsbuildinfo

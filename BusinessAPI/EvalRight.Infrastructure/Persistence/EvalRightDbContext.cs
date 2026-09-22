@@ -65,9 +65,6 @@ public class EvalRightDbContext : DbContext, IEvalRightDbContext
         base.OnModelCreating(modelBuilder);
         
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(EvalRightDbContext).Assembly);
-        
-        // Global conventions if any
-        // e.g. SnakeCase naming convention is handled by Npgsql usually or we can configure it
     }
 }
 

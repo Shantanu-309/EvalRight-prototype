@@ -1,0 +1,215 @@
+/* Why EvalRight Section */
+.why-evalright-section {
+  padding: 6rem 2rem;
+  background: #FFFFFF;
+  position: relative;
+  z-index: 10;
+}
+
+html.dark .why-evalright-section {
+  background: #0A0A0A;
+}
+
+.why-evalright-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.why-evalright-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  color: var(--brand-red);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+html.dark .why-evalright-title {
+  color: var(--brand-red);
+}
+
+.why-evalright-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  text-align: center;
+  color: #4A4A4A;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+html.dark .why-evalright-subtitle {
+  color: #CCCCCC;
+}
+
+.why-evalright-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left Side: Image Grid */
+.why-evalright-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.why-evalright-image-tile {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #F5F5F5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+html.dark .image-placeholder {
+  background: #1A1A1A;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.image-placeholder:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+html.dark .image-placeholder:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Right Side: Value Cards */
+.why-evalright-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.why-evalright-card {
+  background: #FFFFFF;
+  border-left: 5px solid var(--brand-purple-deep);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(107, 70, 193, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+html.dark .why-evalright-card {
+  background: #1A1A1A;
+  border-left-color: var(--brand-purple);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
+}
+
+.why-evalright-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(107, 70, 193, 0.15);
+}
+
+html.dark .why-evalright-card:hover {
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+}
+
+.why-evalright-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-purple-deep);
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+html.dark .why-evalright-card-title {
+  color: var(--brand-purple-lighter);
+}
+
+.why-evalright-card-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4A4A4A;
+  margin: 0;
+}
+
+html.dark .why-evalright-card-text {
+  color: #CCCCCC;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .why-evalright-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .why-evalright-images {
+    order: 1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .why-evalright-cards {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-evalright-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .why-evalright-subtitle {
+    margin-bottom: 3rem;
+  }
+
+  .why-evalright-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .why-evalright-card {
+    padding: 1.5rem;
+  }
+
+  .why-evalright-card-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-evalright-section {
+    padding: 3rem 1rem;
+  }
+
+  .why-evalright-title {
+    font-size: 2rem;
+  }
+
+  .why-evalright-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .why-evalright-images {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .why-evalright-image-tile {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .why-evalright-cards {
+    gap: 1.5rem;
+  }
+
+  .why-evalright-card {
+    padding: 1.25rem;
+  }
+}
+
+

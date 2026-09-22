@@ -1,0 +1,128 @@
+.link {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.profile-section {
+  margin-bottom: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html:not(.dark) .info-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.info-label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+html:not(.dark) .info-label {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.info-value {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+html:not(.dark) .info-value {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.timeline-item {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  border-left: 3px solid;
+  border-image: linear-gradient(135deg, #B30022 0%, #3D007A 100%) 1;
+}
+
+html:not(.dark) .timeline-item {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.note-item {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  border-left: 3px solid;
+  border-image: linear-gradient(135deg, #B30022 0%, #3D007A 100%) 1;
+}
+
+html:not(.dark) .note-item {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.note-item p {
+  margin: 0 0 0.5rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+html:not(.dark) .note-item p {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.note-date {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+html:not(.dark) .note-date {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

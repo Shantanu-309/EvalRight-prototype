@@ -16,6 +16,7 @@ public interface IEvalRightDbContext
     DbSet<ClientContact> ClientContacts { get; }
     DbSet<ClientSettings> ClientSettings { get; }
     DbSet<BgvPackage> BgvPackages { get; }
+    DbSet<BgvPackageComponent> BgvPackageComponents { get; }
     DbSet<Candidate> Candidates { get; }
     DbSet<BgvOrder> BgvOrders { get; }
     DbSet<BgvOrderComponent> BgvOrderComponents { get; }

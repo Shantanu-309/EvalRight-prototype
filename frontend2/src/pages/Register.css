@@ -1,0 +1,197 @@
+/* Register Page Styles */
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, rgba(189, 10, 46, 0.05) 0%, rgba(75, 0, 130, 0.05) 100%);
+}
+
+html.dark .register-page {
+  background: linear-gradient(135deg, rgba(189, 10, 46, 0.1) 0%, rgba(75, 0, 130, 0.1) 100%);
+}
+
+.register-container {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  min-height: calc(100vh - 200px);
+}
+
+.register-card {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+html.dark .register-card {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo Container */
+.register-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 2rem 1.5rem;
+  background: transparent;
+}
+
+.register-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+  border: none;
+}
+
+/* Dark mode logo wrapper */
+html.dark .register-logo-container {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.75rem;
+  margin: 1.5rem 1.5rem 0;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .register-logo {
+  filter: brightness(1.1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* Form Content */
+.register-content {
+  padding: 2.5rem 2rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.register-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.register-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+html.dark .register-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.register-content::-webkit-scrollbar-thumb {
+  background: rgba(189, 10, 46, 0.3);
+  border-radius: 4px;
+}
+
+html.dark .register-content::-webkit-scrollbar-thumb {
+  background: rgba(75, 0, 130, 0.3);
+}
+
+.register-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(189, 10, 46, 0.5);
+}
+
+html.dark .register-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 0, 130, 0.5);
+}
+
+/* Footer */
+.register-footer {
+  padding: 1.5rem 2rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html.dark .register-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.register-footer-text {
+  font-size: 0.9375rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+html.dark .register-footer-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.register-login-link {
+  color: #4B0082;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+html.dark .register-login-link {
+  color: #6A1B9A;
+}
+
+.register-login-link:hover {
+  color: #6A1B9A;
+  text-decoration: underline;
+}
+
+html.dark .register-login-link:hover {
+  color: #8E24AA;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .register-card {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-card {
+    max-width: 100%;
+  }
+
+  .register-content {
+    padding: 2rem 1.5rem;
+    max-height: 65vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .register-container {
+    padding: 2rem 1rem;
+  }
+
+  .register-card {
+    border-radius: 1rem;
+  }
+
+  .register-logo-container {
+    padding: 2rem 1.5rem 1rem;
+  }
+
+  html.dark .register-logo-container {
+    margin: 1rem 1rem 0;
+    padding: 0.75rem;
+  }
+
+  .register-logo {
+    height: 50px;
+  }
+
+  .register-content {
+    padding: 1.5rem 1rem;
+    max-height: 60vh;
+  }
+
+  .register-footer {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+}
+

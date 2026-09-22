@@ -8,5 +8,6 @@ public interface IAuthService
 {
     Task<LoginResponse> LoginAsync(LoginRequest request);
     Task<Account> RegisterAsync(RegisterRequest request, string roleCode);
+    Task<ClientRegistrationResponse> RegisterClientAsync(ClientRegistrationRequest request);
 }
 

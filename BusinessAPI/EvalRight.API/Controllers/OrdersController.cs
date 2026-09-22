@@ -13,10 +13,12 @@ namespace EvalRight.API.Controllers;
 public class OrdersController : ControllerBase
 {
     private readonly IOrderService _orderService;
+    private readonly IInvitationService _invitationService;
 
-    public OrdersController(IOrderService orderService)
+    public OrdersController(IOrderService orderService, IInvitationService invitationService)
     {
         _orderService = orderService;
+        _invitationService = invitationService;
     }
 
     [HttpPost]
@@ -56,6 +58,72 @@ public class OrdersController : ControllerBase
         // TODO: Validate access
         var orders = await _orderService.GetOrdersByClientIdAsync(clientId);
         return Ok(orders);
+    }
+
+    [HttpPost("manual")]
+    public async Task<IActionResult> CreateManualOrder([FromBody] ManualOrderRequest request)
+    {
+        try
+        {
+            var clientIdClaim = User.FindFirst("company_id")?.Value;
+            var accountIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(clientIdClaim) || !long.TryParse(clientIdClaim, out var clientId))
+            {
+                return Unauthorized(new { message = "Invalid client ID in token" });
+            }
+
+            if (string.IsNullOrEmpty(accountIdClaim) || !long.TryParse(accountIdClaim, out var accountId))
+            {
+                return Unauthorized(new { message = "Invalid account ID in token" });
+            }
+
+            var response = await _orderService.CreateManualOrderAsync(request, clientId, accountId);
+            
+            if (!response.Success)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
+        }
+        catch (System.Exception ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+    }
+
+    [HttpPost("invitation")]
+    public async Task<IActionResult> CreateInvitationOrder([FromBody] InvitationOrderRequest request)
+    {
+        try
+        {
+            var clientIdClaim = User.FindFirst("company_id")?.Value;
+            var accountIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(clientIdClaim) || !long.TryParse(clientIdClaim, out var clientId))
+            {
+                return Unauthorized(new { message = "Invalid client ID in token" });
+            }
+
+            if (string.IsNullOrEmpty(accountIdClaim) || !long.TryParse(accountIdClaim, out var accountId))
+            {
+                return Unauthorized(new { message = "Invalid account ID in token" });
+            }
+
+            var response = await _invitationService.CreateInvitationOrderAsync(request, clientId, accountId);
+            
+            if (!response.Success)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
+        }
+        catch (System.Exception ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
     }
 }
 
